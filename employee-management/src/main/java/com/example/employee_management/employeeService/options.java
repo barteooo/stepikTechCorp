@@ -8,8 +8,6 @@ import java.util.stream.Collectors;
 
 public class options {
 
-
-
     public static List<Person> filterEmployeesByCompany(List<Person> employees, String country){
         List<Person> filteredEmployees = employees.stream()
                 .filter(e -> e.getCompany().equalsIgnoreCase(country))

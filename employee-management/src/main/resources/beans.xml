@@ -7,6 +7,8 @@
         <constructor-arg value="Havoc"/>
         <constructor-arg value="chavocr@yahoo.com"/>
         <constructor-arg value="Mymm"/>
+        <constructor-arg value="USD" />
+        <constructor-arg value= "USA" />
     </bean>
 
     <bean id="vicePresident" class="com.example.employee_management.model.Person">
@@ -14,6 +16,8 @@
         <constructor-arg value="Gadaud"/>
         <constructor-arg value="hgadaud9@sohu.com"/>
         <constructor-arg value="Oyope"/>
+        <constructor-arg value="USD" />
+        <constructor-arg value= "USA" />
     </bean>
 
     <bean id="secretary" class="com.example.employee_management.model.Person">
@@ -21,5 +25,7 @@
         <constructor-arg value="Wrettum"/>
         <constructor-arg value="kwrettumj@slideshare.net"/>
         <constructor-arg value="Browsetype"/>
+        <constructor-arg value="USD" />
+        <constructor-arg value= "USA" />
     </bean>
 </beans>
