@@ -1,6 +1,7 @@
 package com.example.employee_management.controller;
 
-import com.example.employee_management.employeeService.EmployeeManagementService;
+import com.example.employee_management.service.EmployeeManagementService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import com.example.employee_management.model.Person;
@@ -18,8 +19,9 @@ public class EmployeeController {
 
     private final EmployeeManagementService employeeManagementService;
 
-    public EmployeeController(){
-        this.employeeManagementService = new EmployeeManagementService();
+    @Autowired
+    public EmployeeController(EmployeeManagementService employeeManagementService){
+        this.employeeManagementService = employeeManagementService;
     }
 
     @GetMapping
@@ -49,7 +51,6 @@ public class EmployeeController {
                 person.getCountry() == null || person.getCountry().isEmpty() ||
                 person.getSalary() == null || person.getSalary().isEmpty() ||
                 person.getCurrency() == null || person.getCurrency().isEmpty()) {
-
             Map<String, String> errorResponse = new HashMap<>();
             errorResponse.put("error", "All fields are required and must be non-empty.");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);

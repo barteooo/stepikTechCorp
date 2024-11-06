@@ -1,4 +1,4 @@
-package com.example.employee_management.employeeService;
+package com.example.employee_management.service;
 
 import com.example.employee_management.model.Person;
 import com.opencsv.CSVReader;

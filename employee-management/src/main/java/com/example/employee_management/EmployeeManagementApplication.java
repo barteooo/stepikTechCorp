@@ -1,16 +1,14 @@
 package com.example.employee_management;
 
-import com.example.employee_management.employeeService.options;
+import com.example.employee_management.model.EmployeeModel;
 import com.example.employee_management.model.Person;
-import com.example.employee_management.employeeService.csvService; // Upewnij się, że masz poprawny import
+import com.example.employee_management.service.csvService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @SpringBootApplication
 public class EmployeeManagementApplication {
@@ -31,14 +29,6 @@ public class EmployeeManagementApplication {
 		csvService csvService = new csvService();
 		List<Person> employees = csvService.readEmployeesFromCsv("src/main/resources/MOCK_DATA.csv");
 
-
-		System.out.println("--------------------filteredByCountry-------------------");
-		List<Person> filtered = options.filterEmployeesByCompany(employees, "China");
-		filtered.forEach(e -> System.out.println(e.toString()));
-
-		System.out.println(("------------------sortedBySurname--------------"));
-		List<Person> sortedBySurname = options.sortEmployeesByLastName(employees);
-		sortedBySurname.forEach(e -> System.out.println(e.toString()));
 
 	}
 
